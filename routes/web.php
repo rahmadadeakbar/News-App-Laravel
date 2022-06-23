@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrangController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,10 +19,13 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::resource('post', PostController::class);
+Route::resource('products', ProductController::class);
+Route::get('orang', [OrangController::class, 'index']);
 
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 Auth::routes();
 
